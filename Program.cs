@@ -55,6 +55,16 @@
             // Test if Add method prevents box with same volume being added.
             boxCollection.Add(new Box(7, 2, 7));
 
+            Console.WriteLine("--------------------------------------");
+
+            // Test Contains override method with Equalitycomparer specified
+            Box test = new Box(5,8,10);
+            if (boxCollection.Contains(test, new BoxSameDimensions()))
+            {
+                Console.WriteLine("Overload with Equalitycomparer object worked!");
+            }
+            
+
             Console.ReadKey();
         }
 

@@ -59,6 +59,19 @@ namespace AvanceradDotNetLabb1
             }
             return false;
         }
+
+        public bool Contains(Box item, EqualityComparer<Box> comparer)
+        {
+            foreach (Box box in _innerCol)
+            {
+                if (comparer.Equals(box, item))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public bool Contains(Box item, out string msg)
         {
             msg = "";
